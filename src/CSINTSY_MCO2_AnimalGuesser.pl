@@ -59,10 +59,23 @@ nocturnal(lemur).
 nocturnal(bat).
 nocturnal(raccoon).
 
+% Relationships
+eats(lion, zebra).
+eats(lion, giraffe).
+eats(tiger, kangaroo).
+eats(cheetah, gazelle).
+eats(owl, mouse).
+eats(owl, small_bird).
+eats(bear, salmon).
+eats(bear, berries).
+eats(gorilla, fruits).
+eats(gorilla, leaves).
+eats(dolphin, fish).
+eats(fox, rabbit).
+eats(fox, chicken).
+
 % Rules for inferring some properties based on facts
-carnivore(X) :- mammal(X), has_spots(X).
-carnivore(X) :- mammal(X), has_mane(X).
-carnivore(X) :- mammal(X), has_stripes(X).
+carnivore(X) :- mammal(X), eats(X, _).
 
 herbivore(X) :- mammal(X), not(carnivore(X)).
 
