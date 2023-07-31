@@ -89,3 +89,21 @@ is_nocturnal(X) :- nocturnal(X).
 is_mammal(X) :- mammal(X).
 is_bird(X) :- bird(X).
 is_aquatic(X) :- aquatic(X).
+
+% Additional characteristics and rules
+has_feathers(X) :- bird(X).
+
+is_large(X) :- mammal(X), not(bird(X)), (has_trunk(X); has_long_neck(X)).
+
+is_small(X) :- mammal(X), not(bird(X)), not(is_large(X)).
+
+has_aquatic_lifestyle(X) :- aquatic(X), not(mammal(X)).
+
+has_mammals_as_prey(X) :- carnivore(X), eats(X, Prey), mammal(Prey).
+
+% Additional relationships
+eats(owl, mouse).
+eats(gorilla, leaves).
+
+% Negation in rules
+not_nocturnal(X) :- animal(X), not(nocturnal(X)).
