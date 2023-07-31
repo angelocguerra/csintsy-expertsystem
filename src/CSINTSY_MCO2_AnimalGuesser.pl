@@ -1,9 +1,23 @@
+/*
+    Title: CSINTSY Major Course Output 2: Expert System
+    Group members:
+    1. Nicolas, Aaron
+    2. Yung Cheng, Adrian
+    3. Guerra, Angelo
+    4. Tuballa, Hans
+    5. Salih, Shems
+
+    A software implementation of Animal Guesser, a small-scale expert system.
+
+    Inspired by: Andrei Horak's Expert System
+    Github repository link: https://github.com/linkyndy/expert-systems
+*/
+
 main :-
   intro,
   reset_answers,
   find_animal(Animal),
   describe(Animal), nl.
-
 
 intro :-
   write('Welcome to Animal Guesser!'), nl,
