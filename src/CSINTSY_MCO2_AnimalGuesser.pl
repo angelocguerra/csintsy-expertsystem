@@ -94,16 +94,16 @@ animal(otter):-
     animal_fly(no).
 
 animal(fox):-
-    animal_kingdom(omnivore),
-    animal_diet(carnivore),
-    animal_features(has_no_distinct_features),
+    animal_kingdom(mammal),
+    animal_diet(omnivore),
+    animal_features(has_long_snouts),
     animal_sleep(nocturnal),
     animal_fly(no).
 
 animal(lemur):-
     animal_kingdom(mammal),
     animal_diet(herbivore),
-    animal_features(has_no_distinct_features),
+    animal_features(has_black_and_white_fur),
     animal_sleep(nocturnal),
     animal_fly(no).
 
@@ -124,21 +124,21 @@ animal(hedgehog):-
 animal(bear):-
     animal_kingdom(mammal),
     animal_diet(omnivore),
-    animal_features(has_no_distinct_features),
+    animal_features(has_long_snouts),
     animal_sleep(not_nocturnal),
     animal_fly(no).
 
 animal(hippopotamus):-
     animal_kingdom(mammal),
     animal_diet(herbivore),
-    animal_features(has_great_bite_force_of_all_land_animals),
+    animal_features(has_a_great_bite_force),
     animal_sleep(not_nocturnal),
     animal_fly(no).
 
 animal(gorilla):-
     animal_kingdom(mammal),
     animal_diet(omnivore),
-    animal_features(has_similarities_to_monkeys_but_bigger),
+    animal_features(has_broad_chest),
     animal_sleep(not_nocturnal),
     animal_fly(no).
 
@@ -166,7 +166,7 @@ animal(owl):-
 animal(dolphin):-
     animal_kingdom(aquatic),
     animal_diet(carnivore),
-    animal_features(has_no_distinct_features),
+    animal_features(has_flippers),
     animal_sleep(not_nocturnal),
     animal_fly(no).
 
@@ -234,23 +234,26 @@ answer(has_webbed_feet) :-
 answer(has_slow_movement) :-
     write('Animal has slow movement').
 
-answer(has_no_distinct_features) :-
-    write('Animal has no distinct features').
-
 answer(has_quills) :-
     write('Animal has quills').
 
-answer(has_great_bite_force_of_all_land_animals) :-
-	write('Animal has the greatest bite force of all land animals').
+answer(has_flippers) :-
+	write('Animal has flippers').
 
-answer(has_similarities_to_monkeys_but_bigger) :-
-    write('Has similarities to monkeys but bigger').
+answer(has_long_snouts) :-
+    write('Has Long Snouts').
 
 answer(has_similarities_to_humans) :-
     write('Has similarities to humans').
 
 answer(has_silent_flight) :-
     write('Has silent flight').
+
+answer(has_broad_chest) :-
+    write('Has broad chest').
+
+answer(has_great_bite_force) :-
+    write('Has great bite force').
 
 answer(nocturnal) :-
     write('Is nocturnal').
@@ -364,7 +367,7 @@ animal_features(Answer) :-
     progress(animal_features, Answer).
 animal_features(Answer) :-
     \+ progress(animal_features, _),
-    ask(animal_features, Answer, [has_trunk, has_stripes, has_mane, has_long_neck, has_pouch, has_spots, has_black_and_white_fur, has_webbed_feet, has_slow_movement, has_no_distinct_features, has_quills, has_great_bite_force_of_all_land_animals, has_similarities_to_monkeys_but_bigger, has_similarities_to_humans, has_silent_flight]).
+    ask(animal_features, Answer, [has_trunk, has_stripes, has_mane, has_long_neck, has_pouch, has_spots, has_black_and_white_fur, has_webbed_feet, has_slow_movement, has_quills, has_great_bite_force, has_similarities_to_humans, has_silent_flight, has_flippers, has_long_snouts, has_broad_chest]).
 
 animal_sleep(Answer) :-
     progress(animal_sleep, Answer).
